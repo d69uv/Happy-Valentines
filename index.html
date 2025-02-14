@@ -52,7 +52,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Will You Be My Valentine? 💘</h1>
+        <h1>Will You Be My Valentine, Sara? 💘</h1>
         <div class="buttons">
             <button class="yes" onclick="yesClicked()">Yes</button>
             <button class="no" onclick="noClicked()">No</button>
@@ -71,7 +71,6 @@
         function noClicked() {
             let noButton = document.querySelector(".no");
             if (noIndex < noQuestions.length - 1) {
-                document.querySelector("h1").innerText = noQuestions[noIndex];
                 noButton.innerText = noQuestions[noIndex];
                 noIndex++;
             } else {
