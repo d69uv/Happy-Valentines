@@ -43,38 +43,39 @@
             background-color: grey;
             color: white;
         }
+        .hint {
+            margin-top: 10px;
+            color: black;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Will You Be My Valentine Sara?</h1>
+        <h1>Will You Be My Valentine? 💘</h1>
         <div class="buttons">
-            <button class="yes" onclick="nextQuestion()">Yes</button>
+            <button class="yes" onclick="yesClicked()">Yes</button>
             <button class="no" onclick="noClicked()">No</button>
         </div>
+        <p class="hint">(Click no as long as you can)</p>
     </div>
 
     <script>
-        let yesQuestions = ["Yayyy, I love you so much, Happy valentines baby <3" ];
-        let noQuestions = ["Are you sure Sara?", "Like really really sure?", "Think again!", "But I love you so much" , "Arey jaan" , "Please don't do this to me na" , "Come on love" , "I'll start crying ab" , "Just say yes" , "Seriously?" , "Okay stop" , "Istg" , "Enough" , "Last chance" , "Yes"];
-        let yesIndex = 0;
+        let noQuestions = ["Are you sure?", "Really sure?", "Think again!", "I'm sad now 😢" ];
         let noIndex = 0;
 
-        function nextQuestion() {
-            if (yesIndex < yesQuestions.length - 1) {
-                document.querySelector("h1").innerText = yesQuestions[yesIndex];
-                yesIndex++;
-            } else {
-                document.querySelector(".buttons").innerHTML = "<h2>Yayyy, I love you so much, Happy valentines baby <3</h2>";
-            }
+        function yesClicked() {
+            document.querySelector(".container").innerHTML = "<h1>Yayyy, I love you so much baby, Happy Valentines <3</h1>";
         }
 
         function noClicked() {
+            let noButton = document.querySelector(".no");
             if (noIndex < noQuestions.length - 1) {
                 document.querySelector("h1").innerText = noQuestions[noIndex];
+                noButton.innerText = noQuestions[noIndex];
                 noIndex++;
             } else {
-                document.querySelector(".buttons").innerHTML = "<h2>Yayyy, I love you so much, Happy valentines baby <3</h2>";
+                document.querySelector(".buttons").innerHTML = "<h2>I'm sad now 😢</h2>";
             }
         }
     </script>
