@@ -52,7 +52,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Will You Be My Valentine, Sara? 💘</h1>
+        <h1>Will You Be My Valentine Sara?</h1>
         <div class="buttons">
             <button class="yes" onclick="yesClicked()">Yes</button>
             <button class="no" onclick="noClicked()">No</button>
@@ -61,7 +61,7 @@
     </div>
 
     <script>
-        let noQuestions = ["Are you sure?", "Really sure?", "Think again!", "I'm sad now 😢" ];
+        let noQuestions = ["Are you sure baby?", "Really sure?", "Think again sara", "But I love you so much" , "Don't do this to me na" , "Arey jaan" , "Please?" , "Come on love" , "I'll start crying" , "Can u not?" , "Just say yes" , "Okay stop" , "Istg" , "Enough na" , "Last chance" , "Yes" ];
         let noIndex = 0;
 
         function yesClicked() {
@@ -74,7 +74,7 @@
                 noButton.innerText = noQuestions[noIndex];
                 noIndex++;
             } else {
-                document.querySelector(".buttons").innerHTML = "<h2>I'm sad now 😢</h2>";
+                document.querySelector(".buttons").innerHTML = "<h2>Yayyy, I love you so much baby, Happy Valentines <3</h2>";
             }
         }
     </script>
