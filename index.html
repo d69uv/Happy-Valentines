@@ -42,38 +42,40 @@
         .no {
             background-color: grey;
             color: white;
-            position: absolute;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Will You Be My Valentine? 💘</h1>
+        <h1>Will You Be My Valentine Sara?</h1>
         <div class="buttons">
             <button class="yes" onclick="nextQuestion()">Yes</button>
-            <button class="no" onmouseover="moveNoButton()">No</button>
+            <button class="no" onclick="noClicked()">No</button>
         </div>
     </div>
 
     <script>
-        let questions = ["Are you sure?", "Really really sure?", "Last chance to say no!", "YAY! Can't wait! 💖" ];
-        let index = 0;
+        let yesQuestions = ["Are you sure Sara?", "Really really sure?", "Last chance to say no!", "YAY! Can't wait! 💖" ];
+        let noQuestions = ["Are you really sure Sara?", "Like really really sure?", "Think again!", "I'm sad now" ];
+        let yesIndex = 0;
+        let noIndex = 0;
 
         function nextQuestion() {
-            if (index < questions.length - 1) {
-                document.querySelector("h1").innerText = questions[index];
-                index++;
+            if (yesIndex < yesQuestions.length - 1) {
+                document.querySelector("h1").innerText = yesQuestions[yesIndex];
+                yesIndex++;
             } else {
                 document.querySelector(".buttons").innerHTML = "<h2>YAY! Can't wait! 💖</h2>";
             }
         }
 
-        function moveNoButton() {
-            let button = document.querySelector(".no");
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 100);
-            button.style.left = `${x}px`;
-            button.style.top = `${y}px`;
+        function noClicked() {
+            if (noIndex < noQuestions.length - 1) {
+                document.querySelector("h1").innerText = noQuestions[noIndex];
+                noIndex++;
+            } else {
+                document.querySelector(".buttons").innerHTML = "<h2>I'm sad now 😢</h2>";
+            }
         }
     </script>
 </body>
